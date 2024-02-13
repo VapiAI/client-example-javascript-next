@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-active {
+  @apply bg-red-500 hover:bg-red-700;
+}
+
+.btn-loading {
+  @apply bg-orange-500 hover:bg-orange-700;
+}
+.btn-idle {
+  @apply bg-green-500 hover:bg-green-700;
+}

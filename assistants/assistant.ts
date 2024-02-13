@@ -94,5 +94,7 @@ export const assistant: CreateAssistantDTO | any = {
   },
   firstMessage:
     "Hi. I'm Paula, Welcome to Broadway Shows! How are u feeling today?",
-  serverUrl: "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
+  serverUrl: process.env.NEXT_PUBLIC_SERVER_URL
+    ? process.env.NEXT_PUBLIC_SERVER_URL
+    : "https://08ae-202-43-120-244.ngrok-free.app/api/webhook",
 };

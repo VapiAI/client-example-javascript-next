@@ -22,6 +22,12 @@ const AssistantButton = ({
     boxShadow: `1px 1px ${10 + audioLevel * 40}px ${
       audioLevel * 10
     }px ${color}`,
+    backgroundColor:
+      callStatus === CALL_STATUS.ACTIVE
+        ? "red"
+        : callStatus === CALL_STATUS.LOADING
+        ? "orange"
+        : "green",
     cursor: "pointer",
   };
 
