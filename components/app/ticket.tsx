@@ -1,4 +1,6 @@
 import { shows } from "@/data/shows";
+import { vapi } from "../../lib/vapi.sdk";
+import { MessageTypeEnum } from "../../lib/types/conversation.type";
 
 interface TicketProps {
   type: "confirm" | "ticket";
@@ -11,6 +13,15 @@ function Ticket({
   show = shows[0],
   params = {},
 }: TicketProps) {
+  const confirmDetails = () => {
+    vapi.send({
+      type: MessageTypeEnum.ADD_MESSAGE,
+      message: {
+        role: "user",
+        content: `Looks good to me. Lets go ahead.`,
+      },
+    });
+  };
   return (
     <div className={`bg-slate-100  rounded-xl`}>
       <div className="container mx-auto px-4 py-8">
@@ -49,6 +60,7 @@ function Ticket({
             </div>
             {type == "confirm" ? (
               <button
+                onClick={confirmDetails}
                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="button"
               >

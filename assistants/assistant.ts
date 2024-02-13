@@ -15,6 +15,7 @@ export const assistant: CreateAssistantDTO | any = {
     functions: [
       {
         name: "suggestShows",
+        async: true,
         description: "Suggests a list of broadway shows to the user.",
         parameters: {
           type: "object",
