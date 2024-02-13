@@ -35,6 +35,7 @@ export const assistant: CreateAssistantDTO | any = {
       },
       {
         name: "confirmDetails",
+        async: true, // remove async to wait for BE response.
         description: "Confirms the details provided by the user.",
         parameters: {
           type: "object",
@@ -62,6 +63,7 @@ export const assistant: CreateAssistantDTO | any = {
       },
       {
         name: "bookTickets",
+        async: true, // remove async to wait for BE response.
         description: "Books tickets for the user.",
         parameters: {
           type: "object",
